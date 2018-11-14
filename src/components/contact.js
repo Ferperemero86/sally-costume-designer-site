@@ -20,13 +20,13 @@ class Contact extends Component {
     }
 
    
-        handleSubmit = (e) => {
+        handleSubmit(e) {
             this.setState({
                 [e.target.name]: e.target.value
             });
         }
 
-        validateForm = (e) => {
+        validateForm(e) {
             e.preventDefault();
             const form = document.querySelector('#contact-form');
             const inputEmailVal = document.querySelector('.input-email').value;
