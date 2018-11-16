@@ -50,18 +50,17 @@ class Work extends Component {
         this.setState({
             currentImage: this.currentImage
         })
-        console.log(typeof this.currentImage);
         if (this.currentImage === "0") {
             this.currentImage = "8";
         } 
-     }
+    }
 
     render() {
         if(this.state.photoGallery === 'false') {
-            let images = this.array.map(image => {
+            let images = this.array.map((image) => {
                 return (
-                    <div className = "image-div" id = {image} onClick = {(e)=>{this.showGallery(e)}}>
-                        <img key = {image} src = {`./src/images/${image}.jpg`}/>
+                    <div className = "image-div" id = {image} key = {image} onClick = {this.showGallery}>
+                        <img  src = {`./src/images/${image}.jpg`}/>
                     </div>
                 )
                 
@@ -74,7 +73,7 @@ class Work extends Component {
                             url = './src/images/sallyvideo.MP4'
                             width = '100%'
                             height ='100%'
-                            controls = 'true'
+                            controls = {true}
                         />
                     </div>
                     {images}
